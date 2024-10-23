@@ -17,13 +17,99 @@
         <link rel="stylesheet" href="./css/style.css" />
     </head>
     <body>
-        <!-- Input Distanza -->
-        <input type="text" id="input-distance" />
-        <!-- Input Età -->
-        <input type="text" id="input-age" />
+        <main>
+            <!-- Card - Calcola prezzo -->
+            <div class="ticket-card pink">
+                <!-- Titolo Card -->
+                <div
+                    class="container text-white py-4 d-flex justify-content-center"
+                >
+                    <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+                </div>
 
-        <!-- Submit Button -->
-        <button onclick="submitButton()">InVIO</button>
+                <!-- Contenuto Card -->
+                <div class="container bg-white rounded-4 py-4 px-5">
+                    <!-- Tabella -->
+                    <div class="row row-cols-3 pb-5">
+                        <!-- Titoli degli input field -->
+                        <div class="col d-flex justify-content-center p-2">
+                            <h5>Nome Cognome</h5>
+                        </div>
+                        <div class="col d-flex justify-content-center p-2">
+                            <h5>Km da percorrere</h5>
+                        </div>
+                        <div class="col d-flex justify-content-center p-2">
+                            <h5>Fascia d'età</h5>
+                        </div>
+
+                        <!-- Input field -->
+                        <div class="col d-flex justify-content-center">
+                            <!-- Input Distanza -->
+                            <input
+                                type="text"
+                                id="input-distance"
+                                class="rounded-2"
+                            />
+                        </div>
+                        <div class="col d-flex justify-content-center">
+                            <!-- Input Età -->
+                            <input
+                                type="text"
+                                id="input-age"
+                                class="rounded-2"
+                            />
+                        </div>
+                        <div class="col d-flex justify-content-center">
+                            <div class="dropdown">
+                                <button
+                                    class="btn dropdown-toggle"
+                                    type="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    Dropdown button
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href=""
+                                            >Action</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="">
+                                            Another action
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="">
+                                            Something else here
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pulsanti -->
+                    <div class="d-flex justify-content-center">
+                        <!-- Pulsante Genera -->
+                        <button
+                            class="rounded m-3 py-1 px-2"
+                            onclick="submitButton()"
+                        >
+                            <h4 class="m-0">Genera</h4>
+                        </button>
+                        <!-- Pulsante Annulla -->
+                        <button
+                            class="rounded m-3 py-1 px-2"
+                            onclick="submitButton()"
+                        >
+                            <h4 class="m-0">Annulla</h4>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
 
         <!-- BOOTSTRAP JS -->
         <script

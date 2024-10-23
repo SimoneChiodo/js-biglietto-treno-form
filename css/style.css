@@ -1,6 +1,9 @@
 /************************************************
     CUSTOM PROPERTIES
  ************************************************/
+:root {
+    --background-color: #b81350;
+}
 
 /************************************************
     RESET 
@@ -11,27 +14,52 @@
     box-sizing: border-box;
 } */
 
+body {
+    background-color: var(--background-color);
+}
+
+table {
+    width: 100%;
+}
+
 /************************************************
     UTILITIES 
  ************************************************/
-/* .container {
-    margin: 0 auto;
-    padding: 0 10px;
-    width: 1100px;
-    max-width: 100%;
-} */
-
-/************************************************
-    HEADER 
- ************************************************/
+.borderY-gray {
+    border-top: 2px solid lightgray;
+    border-bottom: 2px solid lightgray;
+}
 
 /************************************************
     MAIN 
  ************************************************/
+main > .pink {
+    color: var(--background-color);
+}
 
-/************************************************
-    FOOTER 
- ************************************************/
+main input {
+    border-color: var(--background-color);
+}
+
+main button {
+    border-color: var(--background-color);
+    color: var(--background-color);
+}
+main button:active {
+    border-color: orange;
+}
+
+main .dropdown button,
+main .dropdown button:hover,
+main .dropdown button:active {
+    border-width: 2px;
+    border-color: var(--background-color);
+    color: black;
+}
+
+.dettagli-passeggero {
+    background-color: gray;
+}
 
 /************************************************
     RESPONSIVE: MOBILE-FIRST
