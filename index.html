@@ -19,7 +19,7 @@
     <body>
         <main>
             <!-- Card - Calcola prezzo -->
-            <div class="ticket-card pink">
+            <div id="info-card" class="pink">
                 <!-- Titolo Card -->
                 <div
                     class="container text-white py-4 d-flex justify-content-center"
@@ -44,24 +44,26 @@
 
                         <!-- Input field -->
                         <div class="col d-flex justify-content-center">
-                            <!-- Input Distanza -->
+                            <!-- Input Nome -->
                             <input
                                 type="text"
+                                id="input-name"
+                                class="rounded-2"
+                            />
+                        </div>
+                        <div class="col d-flex justify-content-center">
+                            <!-- Input Distanza -->
+                            <input
+                                type="number"
                                 id="input-distance"
                                 class="rounded-2"
                             />
                         </div>
                         <div class="col d-flex justify-content-center">
                             <!-- Input Età -->
-                            <input
-                                type="text"
-                                id="input-age"
-                                class="rounded-2"
-                            />
-                        </div>
-                        <div class="col d-flex justify-content-center">
                             <div class="dropdown">
                                 <button
+                                    id="input-age"
                                     class="btn dropdown-toggle"
                                     type="button"
                                     data-bs-toggle="dropdown"
@@ -94,15 +96,17 @@
                     <div class="d-flex justify-content-center">
                         <!-- Pulsante Genera -->
                         <button
+                            type="submit"
+                            onclick="generateButton()"
                             class="rounded m-3 py-1 px-2"
-                            onclick="submitButton()"
                         >
                             <h4 class="m-0">Genera</h4>
                         </button>
                         <!-- Pulsante Annulla -->
                         <button
+                            type="submit"
+                            onclick="hiddenButton()"
                             class="rounded m-3 py-1 px-2"
-                            onclick="submitButton()"
                         >
                             <h4 class="m-0">Annulla</h4>
                         </button>
@@ -111,7 +115,7 @@
             </div>
 
             <!-- Card - Il tuo biglietto -->
-            <div class="ticket-card">
+            <div id="ticket-card">
                 <!-- Titolo Card -->
                 <div
                     class="container text-white pt-4 d-flex justify-content-center"
@@ -127,13 +131,13 @@
                     <!-- Tabella -->
                     <div class="row row-cols-2">
                         <!-- Dettagli passeggero -->
-                        <div class="col dettagli-passeggero mb-2 p-3">
+                        <div class="col-3 dettagli-passeggero mb-2 p-3">
                             <h5>NOME PASSEGGERO</h5>
-                            <h6>Jonh</h6>
+                            <h6 id="ticket-name"></h6>
                         </div>
 
                         <!-- Dettagli biglietto -->
-                        <div class="col borderY-gray mb-2 p-3">
+                        <div class="col-9 borderY-gray mb-2 p-3">
                             <!-- Tabella -->
                             <table>
                                 <!-- Titoli tabella -->
@@ -148,10 +152,10 @@
                                 <!-- Elementi tabella -->
                                 <tbody>
                                     <tr>
-                                        <td>a</td>
-                                        <td>a</td>
-                                        <td>a</td>
-                                        <td>a</td>
+                                        <td id="ticket-discount"></td>
+                                        <td id="ticket-wagon"></td>
+                                        <td id="ticket-codeCP"></td>
+                                        <td id="ticket-price"></td>
                                     </tr>
                                 </tbody>
                             </table>

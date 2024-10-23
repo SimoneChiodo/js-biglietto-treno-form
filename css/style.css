@@ -21,6 +21,9 @@ body {
 table {
     width: 100%;
 }
+thead th {
+    padding-bottom: 2rem;
+}
 
 /************************************************
     UTILITIES 
@@ -39,6 +42,7 @@ main > .pink {
 
 main input {
     border-color: var(--background-color);
+    text-align: center;
 }
 
 main button {
@@ -55,6 +59,10 @@ main .dropdown button:active {
     border-width: 2px;
     border-color: var(--background-color);
     color: black;
+}
+
+#ticket-card {
+    display: none;
 }
 
 .dettagli-passeggero {
