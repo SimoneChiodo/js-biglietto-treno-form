@@ -8,21 +8,8 @@
 /************************************************
     RESET 
  ************************************************/
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-
 body {
     background-color: var(--background-color);
-}
-
-table {
-    width: 100%;
-}
-thead th {
-    padding-bottom: 2rem;
 }
 
 /************************************************
@@ -40,33 +27,34 @@ main > .pink {
     color: var(--background-color);
 }
 
-main input,
-main select {
+/* Card - Calcola prezzo */
+#info-card input,
+#info-card select {
     border-color: var(--background-color);
     border-width: 2px;
     text-align: center;
 }
 
-main button {
+#info-card button {
     border-color: var(--background-color);
     color: var(--background-color);
 }
-main button:active {
+#info-card button:active {
     border-color: orange;
 }
 
+/* Card - Il tuo biglietto */
 #ticket-card {
     display: none;
 }
 
-.dettagli-passeggero {
+#ticket-card .dettagli-passeggero {
     background-color: gray;
 }
 
-/************************************************
-    RESPONSIVE: MOBILE-FIRST
- ************************************************/
-
-/************************************************
-    FONTS
- ************************************************/
+#ticket-card table {
+    width: 100%;
+}
+#ticket-card thead th {
+    padding-bottom: 2rem;
+}

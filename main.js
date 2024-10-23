@@ -76,8 +76,6 @@ function generateButton() {
 function hiddenButton() {
     //Nascondo la Card Biglietto
     ticketCard.style.display = "none";
-
-    console.log(inputAge.value, "-----------", inputAge.textContent);
 }
 
 //Funzione generatrice di numeri
