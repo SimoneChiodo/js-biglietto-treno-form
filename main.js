@@ -13,9 +13,10 @@ const showCodeCP = document.getElementById("ticket-codeCP");
 const showPrice = document.getElementById("ticket-price");
 
 function generateButton() {
-    // Converto gli input in numero
+    // Converto e dichiaro le variabili necessarie
+    let name = inputName.value;
     let distance = parseInt(inputDistance.value);
-    let age = parseInt(inputAge.value);
+    let age = inputAge.value;
     let price = 0;
     let discountAmount = "Biglietto Standard";
 
@@ -23,11 +24,11 @@ function generateButton() {
     ticketCard.style.display = "none";
 
     // Se l'input Nome è errato
-    if (inputName.value === "") {
+    if (name === "") {
         alert('La sezione "Nome Cognome" non deve essere vuota!');
         return;
     }
-    if (!inputName.value.includes(" ")) {
+    if (!name.includes(" ")) {
         alert('La sezione "Nome Cognome" deve contenere 2 parole!');
         return;
     }
@@ -36,23 +37,33 @@ function generateButton() {
         alert('La sezione "Km da percorrere" contiene un valore errato!');
         return;
     }
+    // Se l'input Età è vuoto
+    if (age === "") {
+        alert('La sezione "Fascia d\'età" non ha alcun valore selezionato!');
+        return;
+    }
+    // Se l'input Età è errato
+    if (age !== "Minorenne" && age !== "Adulto" && age !== "Over 65") {
+        alert('La sezione "Fascia d\'età" contiene un valore errato!');
+        return;
+    }
 
     // Calcolo prezzo
     price = distance * 0.21;
 
     // Se minorenne
-    if (age < 18) {
+    if (age === "Minorenne") {
         price = (price * 20) / 100;
         discountAmount = "Biglietto Giovani";
     }
     // Se over-65
-    else if (age >= 65) {
+    else if (age === "Over 65") {
         price = (price * 40) / 100;
         discountAmount = "Biglietto Anziani";
     }
 
     //Scrivo i dati all'interno della Card Biglietto
-    showName.textContent = inputName.value;
+    showName.textContent = name;
     showDiscount.textContent = discountAmount;
     showWagon.textContent = generateNumber(0, 13);
     showCodeCP.textContent = generateNumber(10000, 99999);
@@ -65,8 +76,11 @@ function generateButton() {
 function hiddenButton() {
     //Nascondo la Card Biglietto
     ticketCard.style.display = "none";
+
+    console.log(inputAge.value, "-----------", inputAge.textContent);
 }
 
+//Funzione generatrice di numeri
 function generateNumber(min, max) {
     return Math.floor(Math.random() * max) + min;
 }

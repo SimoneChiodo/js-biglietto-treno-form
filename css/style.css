@@ -40,8 +40,10 @@ main > .pink {
     color: var(--background-color);
 }
 
-main input {
+main input,
+main select {
     border-color: var(--background-color);
+    border-width: 2px;
     text-align: center;
 }
 
@@ -51,14 +53,6 @@ main button {
 }
 main button:active {
     border-color: orange;
-}
-
-main .dropdown button,
-main .dropdown button:hover,
-main .dropdown button:active {
-    border-width: 2px;
-    border-color: var(--background-color);
-    color: black;
 }
 
 #ticket-card {
